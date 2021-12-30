@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "types": [
+        "src/types/index.ts"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "styles/*": [
+        "src/styles/*"
+      ],
+      "Icons": [
+        "src/styles/components/Icons.ts"
+      ],
+      "useAuth": [
+        "src/hook/useAuth.ts"
+      ],
+      "lib-firebase": [
+        "src/lib/firebase.ts"
+      ],
+    },
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

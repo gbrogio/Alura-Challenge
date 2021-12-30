@@ -1,3 +1,82 @@
 {
-  "extends": "next/core-web-vitals"
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "rules": {
+        "@typescript-eslint/no-use-before-define": [
+          "error"
+        ],
+        "react/function-component-definition": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "react/no-unused-prop-types": "warn",
+        "react/no-unstable-nested-components": "off",
+        "react/jsx-no-constructed-context-values": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-plusplus": "off",
+    "space-before-function-paren": "warn",
+    "func-names": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-param-reassign": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/tabindex-no-positive": "off",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
+    "no-useless-escape": "off",
+    "consistent-return": "off",
+    "array-callback-return": "off",
+    "no-mixed-operators": "off",
+    "no-cond-assign": "off",
+    "no-unused-expressions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-restricted-globals": "off",
+    "no-alert": "off",
+    "no-return-await": "off"
+  }
 }
