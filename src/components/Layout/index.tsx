@@ -19,7 +19,7 @@ const LayoutCp: React.FC = ({ children }) => {
   const [menuCheck, setMenuCheck] = useState(false);
   const {
     isUser,
-    signInGithub,
+    signInGoogle,
     deleteAccount,
     signOut,
   } = useAuth();
@@ -45,7 +45,7 @@ const LayoutCp: React.FC = ({ children }) => {
       signOut={signOut}
       isWidth={isWidth}
       onClick={() => {
-        signInGithub();
+        signInGoogle();
       }}
     />
   );
