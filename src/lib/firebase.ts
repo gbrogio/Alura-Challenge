@@ -3,7 +3,7 @@ import {
 } from 'firebase/app';
 import {
   getAuth,
-  GithubAuthProvider,
+  GoogleAuthProvider,
   onIdTokenChanged,
   signOut,
   signInWithRedirect,
@@ -39,11 +39,11 @@ if (getApps().length < 1) {
 
 const auth = getAuth();
 const database = getFirestore();
-const githubProvider = new GithubAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
 const authParams = {
   auth,
-  githubProvider,
+  googleProvider,
   onIdTokenChanged,
   signOut,
   signInWithRedirect,
