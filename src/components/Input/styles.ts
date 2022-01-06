@@ -141,6 +141,10 @@ export const Select = styled.select`
   font-family: 'Inter', sans-serif;
   height: 100%;
   cursor: pointer;
+  &#exportType {
+    margin-top: 0!important;
+  }
+
   > option {
     background-color: var(--BackgroundInput);
     cursor: pointer;

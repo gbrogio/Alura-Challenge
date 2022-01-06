@@ -11,18 +11,19 @@ export const CommunityCp = () => {
   const allProjects = [];
   const [isProjects, setProjects] = useState([]);
 
+  const fetchData = async () => {
+    const docSnap = await dataParams.getDocs(dataParams.collection(dataParams.database, 'projects'));
+    docSnap.forEach((doc) => {
+      if (!doc.data().first) {
+        allProjects.push(doc.data());
+      }
+    });
+    setProjects(allProjects);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const docSnap = await dataParams.getDocs(dataParams.collection(dataParams.database, 'projects'));
-      docSnap.forEach((doc) => {
-        if (!doc.data().first) {
-          allProjects.push(doc.data());
-        }
-      });
-      setProjects(allProjects);
-    };
     fetchData();
-  });
+  }, []);
 
   return (
     <Container>

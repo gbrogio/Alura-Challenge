@@ -18,6 +18,7 @@ import {
   toSvg,
 } from 'html-to-image';
 import TextEditor from './TextEditor';
+import InputCp from './Input';
 
 interface props {
   project: ProjectProps;
@@ -64,27 +65,10 @@ const CardCode: React.FC<props> = ({ project }) => {
   };
 
   useEffect(() => setLike(project.projectLikes));
-  // const downloadProject = (Format?: 'png' | 'jpg' | 'svg') => {
-  //   const node = document.getElementById('cardProject');
-  //   const code = document.getElementById(`${project.pid}-code`);
-  //   node.classList.add('download');
-  //   code.classList.add('download');
 
-  //   setTimeout(() => {
-  //     toPng(node)
-  //       .then((dataUrl) => {
-  //         const aElement = document.createElement('a');
-  //         aElement.style.display = 'none';
-  //         aElement.href = dataUrl;
-  //         aElement.download = `${projectInfos.projectName}.png`;
-  //         aElement.click();
-  //         aElement.remove();
-  //         code.classList.remove('download');
-  //         node.classList.remove('download');
-  //       });
-  //   }, 500);
-  // };
   const ref = useRef<HTMLDivElement>(null);
+  const refModal = useRef<HTMLSelectElement>(null);
+  const refModalContainer = useRef<HTMLDivElement>(null);
 
   const downloadProject = useCallback((exportType: 'svg' | 'png' | 'jpg') => {
     const CurrentElement = ref.current;
@@ -134,6 +118,7 @@ const CardCode: React.FC<props> = ({ project }) => {
         });
     }
   }, [ref]);
+
   return (
     <Container ref={ref} id="cardProject" key={project.pid}>
       <section className="code">
@@ -148,10 +133,44 @@ const CardCode: React.FC<props> = ({ project }) => {
       <section className="codeActions">
         <ButtonAction
           type="button"
-          onClick={() => {
-            downloadProject('svg');
+          onClick={(ev) => {
+            const currentDisplay = refModalContainer.current.style.display;
+
+            refModalContainer.current.style.display = 'block';
+            (ev.currentTarget.parentNode as HTMLElement)
+              .style.bottom = currentDisplay === 'block' ? '6.5rem' : '7.8rem';
+            refModalContainer.current.style.transform = 'scale(1)';
           }}
         >
+          <div
+            className="modalSave"
+            ref={refModalContainer}
+            style={{
+              display: 'none',
+              marginRight: '1rem',
+            }}
+          >
+            <InputCp
+              isType="select"
+              iD="exportType"
+              ref={refModal}
+              onChange={(ev) => {
+                const { value } = ev.currentTarget as HTMLSelectElement;
+
+                if (value !== 'none') {
+                  downloadProject(value as ('svg' | 'jpg' | 'png'));
+                }
+              }}
+              style={{
+                width: '100%',
+              }}
+            >
+              <option value="none">Tipo de Arquivo</option>
+              <option value="png">PNG</option>
+              <option value="svg">SVG</option>
+              <option value="jpg">JPG</option>
+            </InputCp>
+          </div>
           <ExportIcon />
         </ButtonAction>
         {projectAuthor.userId === isUser?.uid && (

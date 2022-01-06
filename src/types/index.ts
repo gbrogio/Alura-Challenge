@@ -22,6 +22,8 @@ export interface InputProps {
   iD?: string,
   style?: React.CSSProperties,
   required?: boolean,
+  ref?: React.MutableRefObject<any>,
+  onChange?: React.ChangeEventHandler<any>;
 }
 export interface ProjectProps {
   pid: string,

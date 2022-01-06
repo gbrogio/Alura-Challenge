@@ -15,7 +15,8 @@ export const Container = styled.div`
   :hover {
     .codeActions {
       opacity: 1;
-      transform: translateX(10%) translateY(-35%);
+      right: .5rem;
+      bottom: 7.8rem;
     }
   }
   > section.code {
@@ -38,20 +39,20 @@ export const Container = styled.div`
   }
   .codeActions {
     opacity: 0;
-    transform: translateX(50%);
     position: absolute;
     right: 0;
+    bottom: 7.4rem;
     padding: 0.5rem;
     display: flex;
     background-color: rgb(0, 0, 0, .4);
     box-shadow: -.5rem .5rem 0 rgba(0, 0, 0, 0.16);
     border-radius: 0 8px 8px 8px;
-    transition: .8s ease-in-out;
-
+    transition: .2s ease-in-out;
+    transform: scale(.9);
     button {
       padding: 0 .5rem;
     }
-    div {
+    div.verticalLine {
       background-color: rgb(0, 0, 0, .4);
       width: 2px;
     }

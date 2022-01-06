@@ -76,9 +76,11 @@ export const HeartIcon = styled(IconHeart)`
 `;
 export const ExportIcon = styled(FileExport)`
   ${defaultWH};
+  transform: scale(1.2);
 `;
 export const EditIcon = styled(Edit)`
   ${defaultWH};
+  transform: scale(1.2);
 `;
 export const MenuIcon = styled.label`
   margin-left: 2rem;

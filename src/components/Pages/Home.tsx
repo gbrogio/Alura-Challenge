@@ -240,6 +240,7 @@ export const HomeCp = () => {
               iD="selectLanguage"
               isType="select"
             >
+              <option value="text">Texto</option>
               <option value="javascript">JavaScript</option>
               <option value="typescript">TypeScript</option>
               <option value="html">HTML</option>

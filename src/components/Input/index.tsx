@@ -18,6 +18,8 @@ const InputCp: React.FC<InputProps> = ({
   isType,
   required,
   style,
+  ref,
+  onChange,
 }) => {
   const [searchInput, setSearchInput] = useState(false);
   const btnClass = 'SearchButton-Activate';
@@ -77,8 +79,9 @@ const InputCp: React.FC<InputProps> = ({
           <Select
             id={iD}
             style={{ marginTop: '1rem' }}
+            ref={ref}
+            onChange={onChange}
           >
-            <option value="text">Texto</option>
             {children}
           </Select>
         )

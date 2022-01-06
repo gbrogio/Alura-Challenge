@@ -40,7 +40,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     }
   };
 
-  const handleUser = async (currentUser: User & reloadUserInfo) => {
+  const handleUser = async (currentUser) => {
     if (currentUser) {
       const formattedUser = formatUser(currentUser);
       await setUser(formattedUser);
@@ -115,6 +115,14 @@ export const AuthProvider: React.FC = ({ children }) => {
       }
 
       await dataParams.deleteDoc(dataParams.doc(dataParams.database, 'users', id));
+      // console.log(isCredentials);
+      // authParams.reauthenticateWithCredential(
+      //   authParams.auth.currentUser,
+      //   null,
+      // )
+      //   .then(() => {
+      //     console.log('successs');
+      //   });
     } finally {
       setLoading(false);
       signOut();
