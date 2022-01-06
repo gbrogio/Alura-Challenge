@@ -54,10 +54,10 @@ export const AuthProvider: React.FC = ({ children }) => {
     return false;
   };
 
-  const signInGithub = () => {
+  const signInGoogle = () => {
     try {
       setLoading(true);
-      authParams.signInWithRedirect(authParams.auth, authParams.githubProvider)
+      authParams.signInWithRedirect(authParams.auth, authParams.googleProvider)
         .then((result) => {
           const { user } = result;
           handleUser(user);
@@ -140,7 +140,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     <AuthContext.Provider value={{
       isUser,
       isLoading,
-      signInGithub,
+      signInGoogle,
       signOut,
       deleteAccount,
     }}
