@@ -47,7 +47,7 @@ const authParams = {
   onIdTokenChanged,
   signOut,
   signInWithRedirect,
-  GithubAuthProvider,
+  GoogleAuthProvider,
   reauthenticateWithCredential,
   deleteApp,
   deleteUser,
