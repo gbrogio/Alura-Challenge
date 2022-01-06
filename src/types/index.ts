@@ -10,7 +10,7 @@ export interface UserProps {
 export interface UserConfigProps {
   isUser: UserProps,
   isLoading: boolean,
-  signInGithub: () => void,
+  signInGoogle: () => void,
   signOut: () => void,
   deleteAccount: () => void,
 }
