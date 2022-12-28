@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Delete } from '@styled-icons/fluentui-system-filled/Delete';
-import { Github } from '@styled-icons/boxicons-logos/Github';
+import { Google } from '@styled-icons/boxicons-logos/Google';
 import { SignOut } from '@styled-icons/octicons/SignOut';
 import { UserDelete } from '@styled-icons/typicons/UserDelete';
 import { SadTear } from '@styled-icons/fa-regular/SadTear';
@@ -42,7 +42,7 @@ export const AluraDev = styled(AluraDevLogo)`
   margin-top: 1.5px;
   margin-right: 2rem;
 `;
-export const GithubIcon = styled(Github)`
+export const GoogleIcon = styled(Google)`
   ${defaultWH2}
 `;
 export const SignOutIcon = styled(SignOut)`
