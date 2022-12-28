@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GithubIcon, SignOutIcon, DeleteAccountIcon } from 'Icons';
+import { GoogleIcon, SignOutIcon, DeleteAccountIcon } from 'Icons';
 import { ButtonFilled } from 'styles/components/Buttons';
 import { Container } from 'styles/components/SignUser';
 import { SignElementProps } from 'types';
@@ -66,15 +66,15 @@ const SignUser: React.FC<SignElementProps> = ({
         <section className="notSing" style={{ display: 'flex', justifyContent: 'center' }}>
           <ButtonFilled
             type="button"
-            id="loginGithub"
+            id="loginGoogle"
             onClick={onClick}
             style={{
               margin: '0 0 0 .5rem',
               padding: '1rem 2rem',
             }}
           >
-            <GithubIcon style={{ marginRight: '1rem' }} />
-            <p>Entrar com Github</p>
+            <GoogleIcon style={{ marginRight: '1rem' }} />
+            <p>Entrar com Google</p>
           </ButtonFilled>
         </section>
       )}
